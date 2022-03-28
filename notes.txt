@@ -11,3 +11,6 @@
 4. connect to instance with ssh or putty
 5. connect to bucket with code, copy from S3 bucket
 6. execute code
+
+
+ssh -i <key-pair> <ec2 instance name>@<public ip address>
