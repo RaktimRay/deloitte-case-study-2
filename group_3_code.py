@@ -77,6 +77,7 @@ def main():
         file = open('C:\\Users\\rakray\\Documents\\Deloitte_Training\\case_study_2\\code\\deloitte-case-study-2\\logs\\{}'.format(filename),'w')
         file.write(data)
         file.close()
+        print("log created")
         time.sleep(10)
 
 if __name__ == "__main__":

@@ -14,3 +14,5 @@
 
 
 ssh -i <key-pair> <ec2 instance name>@<public ip address>
+sudo yum install -y aws -kinesis-agent
+ssh -i "group-03.pem" ec2-user@13.232.241.175
