@@ -1,3 +1,4 @@
+
 import faker as fake
 import datetime
 import time
@@ -67,8 +68,7 @@ while True:
         count = count + 1
         data = data + generate()+'\n'
     filename = f'uber_data_{time.time()}_{count+1}.log'
-    file = open('C:\\Users\\rakray\\Documents\\Deloitte_Training\\case_study_2\\code\\deloitte-case-study-2\\logs\\{}'.format(filename),'w')
+    file = open('C:\\sample\\{}'.format(filename),'w')
     file.write(data)
     file.close()
     time.sleep(10)
-    
