@@ -1,0 +1,7 @@
+1. real time data so no datasets given
+2. columns given for live streaming data
+
+
+random cost
+drop time > pickup time (15-120 min difference)
+add two extra columns at the beginning viz. Customer_Id and Gender
