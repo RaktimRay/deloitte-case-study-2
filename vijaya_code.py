@@ -28,7 +28,7 @@ def addres_check(pick,drop):
 
 
 
-customer_id_list = [i for i in range(1,11)]
+customer_id_list = [i for i in range(101,1001)]
 def generate():
     customer_id = random.choice(customer_id_list)
     booking_date = f.date()
