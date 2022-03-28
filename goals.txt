@@ -6,7 +6,7 @@ Overall goals
 
 
 Day 1
-1. generate synthetic data - create code
+1. generate synthetic data - create code, use a RNG 10-50 to select no. of codes to be made. Create a period to call your function.
 2. block diagram
 3. ppt
 
