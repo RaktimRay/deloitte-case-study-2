@@ -57,7 +57,7 @@ def main():
         if customer_id in gender_dict.keys():
             gender = gender_dict[customer_id]
         else:
-            gender = (random.choice(["male", "female"]))
+            gender = (random.choice(["male", "female", "other"]))
             gender_dict[customer_id] = gender
         return f'{customer_id};{gender};{booking_date};{booking_time};{pick_up_address};{pick};{drop};{drop_address}'
 
@@ -68,7 +68,8 @@ def main():
         for i in range(1,no+1):
             count = count + 1
             data = data + generate()+'\n'
-        filename = f'uber_data_{time.time()}_{count+1}.log'
+        timestr = time.strftime("%d_%m_%Y_%H_%M_%S")
+        filename = f'uber_data_{timestr}.log'
         file = open('C:\\Users\\rakray\\Documents\\Deloitte_Training\\case_study_2\\code\\deloitte-case-study-2\\logs\\{}'.format(filename),'w')
         file.write(data)
         file.close()
