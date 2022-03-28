@@ -1,7 +1,3 @@
-1. real time data so no datasets given
-2. columns given for live streaming data
-
-
-random cost
-drop time > pickup time (15-120 min difference)
-add two extra columns at the beginning viz. Customer_Id and Gender
+make booking time = current time
+add random difference between booking, pickup and drop. Drop and pickup = 15 to 120, booking and pickup = 5-15
+add cost depending on drop-pickup: linear relation, can add some randomize in price selection.
