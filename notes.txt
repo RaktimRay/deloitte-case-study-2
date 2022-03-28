@@ -1,3 +1,13 @@
-make booking time = current time
-add random difference between booking, pickup and drop. Drop and pickup = 15 to 120, booking and pickup = 5-15
-add cost depending on drop-pickup: linear relation, can add some randomize in price selection.
+1. make booking time = random.choice(current, current time + sleep time)
+2. add random difference between booking, pickup and drop. Drop and pickup = 15 to 120 mins, booking and pickup =    2-10 mins
+3. add cost depending on drop-pickup: linear relation, can add some randomize in price selection.
+
+
+
+
+1. launch 1 EC2 in Mumbai region -> default VPC or create VPC & subnet (deloitte-case-study-2-group-3), amazon 	   linux type instance, free tier, t2.micro
+2. install python, kinesis agent, aws-cli (check if present or not), pip freeze -> pip install    requirements.txt, copy your program to EC2 instance
+3. create case study 2 folder -> day-1, day-2, etc. 
+4. connect to instance with ssh or putty
+5. connect to bucket with code, copy from S3 bucket
+6. execute code
