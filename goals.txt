@@ -1,0 +1,16 @@
+1. capture, manage and store real time data
+2. use ML to predict fare charged for future
+3. accurate fare price predictions
+
+Day 1
+1. generate synthetic data
+2. block diagram
+3. ppt
+
+Day 2
+
+1. Identify AWS services required
+2. Cost estimation of selected AWS services
+3. Captrue & store real time data in S3
+4. EDA of captured data - Spark not python/pandas
+5. PPT of end to end architecture for: solution, cost, capture, cleaning, preprocess and upload to s3
