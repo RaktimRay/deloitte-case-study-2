@@ -1,10 +1,12 @@
-
 import faker as fake
 import datetime
 import time
 import random
 
-customer_id = 0
+
+gender_dict = {}
+
+
 f = fake.Faker()
 def address_gen():
     add = [i for i in f.address().split('\n')]
@@ -25,9 +27,9 @@ def addres_check(pick,drop):
 
 
 
-
+customer_id_list = [i for i in range(1,11)]
 def generate():
-    globals()['customer_id'] += 1
+    customer_id = random.choice(customer_id_list)
     booking_date = f.date()
     booking_time = f.time()
     pick_up_address = address_gen()
@@ -50,12 +52,15 @@ def generate():
         if addres_check(pick_up_address,drop_address):
             add_flag = False
     
-
-    gender = (random.choice(["male", "female"]))
+    if customer_id in gender_dict.keys():
+        gender = gender_dict[customer_id]
+    else:
+        gender = (random.choice(["male", "female"]))
+        gender_dict[customer_id] = gender
     return f'{customer_id};{gender};{booking_date};{booking_time};{pick_up_address};{pick};{drop};{drop_address}'
 
 while True:
-    no = random.randint(10,100)
+    no = random.randint(101,1001)
     count = 0
     data = ''
     for i in range(1,no+1):
@@ -66,3 +71,4 @@ while True:
     file.write(data)
     file.close()
     time.sleep(10)
+    
