@@ -3,8 +3,6 @@
 3. add cost depending on drop-pickup: linear relation, can add some randomize in price selection.
 
 
-
-
 1. launch 1 EC2 in Mumbai region -> default VPC or create VPC & subnet (deloitte-case-study-2-group-3), amazon 	   linux type instance, free tier, t2.micro
 2. install python, kinesis agent, aws-cli (check if present or not), pip freeze -> pip install    requirements.txt, copy your program to EC2 instance
 3. create case study 2 folder -> day-1, day-2, etc. 
@@ -19,11 +17,45 @@ sudo yum install -y aws -kinesis-agent
 ssh -i "deloitte-case-study-2-group-3.pem" ec2-user@13.235.0.181
 ssh -i "test_3.pem" ec2-user@13.233.173.238
 
+
 copy from S3
 aws cli S3 cp -> google this
 go to IAM > create a Role > AWS service > EC2 > attach policy > S3 read only > name
 now go back to EC2 instance > attach the role > action > security > attach IAM role
 
+
 another way of copy from laptop to EC2:
 scp -i <key-pair> <file> ec2-user<public-ip>:/ec2-user/
 scp -i "group-03.pem" group_3_code.py ec2-user@13.232.241.175/home/ec2-user/
+
+
+IAMs:
+attach firehose write role to EC2
+attach S3 write role to firehose
+
+
+adding user to group linux
+ls -l
+r = read
+w = write
+x = execute
+-rw- = read-write-_
+Also permissions: -rw-rw-r-- = owner-group-others
+use the correct user - aws-kinesis-agent-user SO change owner of data file to aws-kinesis-agent-user (add to same group as log file group): sudo usermod -aG ec2-user aws-kinesis-agent-user 
+chmod a+x
+
+
+Kinesis agent config:
+accessKey, secretAccessKey after firehose.endpoint
+flow: filepattern <path/*.<type>
+initialPosition: <not required>
+start kinesis agent:
+sudo service aws-kinesis-agent status
+sudo service aws-kinesis-agent start
+sudo service aws-kinesis-agent stop
+check for error:
+cd /var/log/aws-kinesis-agent/
+
+OUR PRATH NOT WORKING BUT TEMP IS WORKING, NOT SURE WHY
+
+
