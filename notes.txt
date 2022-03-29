@@ -17,6 +17,7 @@ ssh -i <key-pair> <ec2 instance name>@<public ip address>
 ssh -i "group-03.pem" ec2-user@13.232.241.175
 sudo yum install -y aws -kinesis-agent
 ssh -i "deloitte-case-study-2-group-3.pem" ec2-user@13.235.0.181
+ssh -i "test_3.pem" ec2-user@13.233.173.238
 
 copy from S3
 aws cli S3 cp -> google this
