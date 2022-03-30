@@ -59,3 +59,14 @@ cd /var/log/aws-kinesis-agent/
 OUR PRATH NOT WORKING BUT TEMP IS WORKING, NOT SURE WHY
 
 
+Glue-Spark
+group-<no>-glue-role
+group-<no>-glue-datalake
+classifier><choose type>-><delimiter>
+-><column headings>
+Crawler->add crawler-><add classifier->data source (crawl all folders)-><choose S3 bucket(or subfolder inside bucket)>add IAM role to crawler-><select frequence (on demand for now)->create database for schema
+
+
+Lambda
+Will trigger glue job->extract data->(transform the data if required)->load into warehouse
+write the lambda function
