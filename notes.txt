@@ -68,5 +68,14 @@ Crawler->add crawler-><add classifier->data source (crawl all folders)-><choose 
 
 
 Lambda
-Will trigger glue job->extract data->(transform the data if required)->load into warehouse
+Will trigger glue job (& crawler?)->extract data->(transform the data if required)->load into warehouse
 write the lambda function
+will also trigger for each S3 file upload and read+append log file to dataset.csv
+
+
+Full process
+kinesis Agent->firehose->S3->L1->crawler(S3)->L2->glue-job->Redshift(create a table schema)->crawl the redshift schema once manually->use this with previously S3 crawled schema together in glue to map
+
+
+Quicksight
+Needs elastic IP for public access
